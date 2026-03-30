@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity in Harmony | World Peace</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette
+           Deep Forest: #1b4332
+           Forest Green: #2d6a4f
+           Earth Yellow: #d4a373
+           Light Ochre: #e9edc9
+           Soft Cream: #fefae0
+        */
+
+        :root {
+            --forest-deep: #1b4332;
+            --forest-mid: #2d6a4f;
+            --earth-yellow: #d4a373;
+            --earth-light: #e9edc9;
+            --cream: #fefae0;
+            --text-dark: #283618;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(27, 67, 50, 0.7), rgba(27, 67, 50, 0.7)), 
+                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--earth-light);
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-style: italic;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            animation: bounce 2s infinite;
+            font-size: 2rem;
+            color: var(--earth-yellow);
+        }
+
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quote-container {
+            background-color: var(--forest-deep);
+            color: var(--earth-light);
+            padding: 60px;
+            border-radius: 50px 5px 50px 5px;
+            border-left: 10px solid var(--earth-yellow);
+            margin: 50px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .peace-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            background-color: var(--earth-light);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--earth-yellow);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: var(--earth-yellow);
+            color: white;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+            color: var(--forest-deep);
+        }
+
+        .card:hover h3 {
+            color: white;
+        }
+
+        .interactive-section {
+            text-align: center;
+            background-color: var(--forest-mid);
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .wish-btn {
+            background-color: var(--earth-yellow);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-family: 'Lora', serif;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .wish-btn:hover {
+            background-color: var(--earth-light);
+            color: var(--forest-deep);
+            transform: scale(1.05);
+        }
+
+        #wish-display {
+            margin-top: 30px;
+            font-size: 1.4rem;
+            min-height: 1.5em;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: var(--forest-deep);
+            color: var(--earth-light);
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 5%; }
+            .quote-container { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>World Peace</h1>
+        <p class="subtitle">"Peace is not merely a distant goal that we seek, but a means by which we arrive at that goal."</p>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <section id="vision">
+        <h2 style="font-family: 'Playfair Display'; font-size: 2.5rem; text-align: center; color: var(--forest-deep);">Our Shared Vision</h2>
+        <div class="peace-grid">
+            <div class="card">
+                <h3>Universal Empathy</h3>
+                <p>To see the world through the eyes of others is the first step toward understanding. When we bridge the gap of perspective, conflict dissolves into compassion.</p>
+            </div>
+            <div class="card">
+                <h3>Environmental Harmony</h3>
+                <p>Just as the forest thrives through diversity and interconnectedness, humanity finds its strength when we live in balance with our planet and each other.</p>
+            </div>
+            <div class="card">
+                <h3>Sustainable Future</h3>
+                <p>Peace is preserved when every child has access to clean water, education, and the opportunity to grow without the shadow of fear.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="quote-container" style="max-width: 900px; margin: 0 auto;">
+        <p class="quote-text">"When the power of love overcomes the love of power, the world will know peace."</p>
+        <p style="text-align: right; font-weight: bold;">— Jimi Hendrix</p>
+    </div>
+
+    <section class="interactive-section">
+        <h2 style="font-family: 'Playfair Display'; font-size: 2.2rem;">Plant a Seed of Peace</h2>
+        <p>Click the button below to generate a random wish for the world.</p>
+        <button class="wish-btn" onclick="generateWish()">Send a Wish</button>
+        <div id="wish-display"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Unity in Harmony. Dedicated to a world without borders and a heart without hate.</p>
+        <p style="margin-top: 10px; opacity: 0.7;">Inspired by the colors of the Earth: Forest Green & Siennese Yellow.</p>
+    </footer>
+
+    <script>
+        const wishes = [
+            "May every child sleep tonight without the sound of sirens.",
+            "May we build bridges where others build walls.",
+            "May the earth heal as our hearts find common ground.",
+            "Peace is a daily, a weekly, a monthly process, gradually changing opinions.",
+            "May kindness be the global currency of 2024.",
+            "Let us cultivate the garden of humanity with patience and love.",
+            "May the dialogue of weapons be replaced by the dialogue of souls."
+        ];
+
+        function generateWish() {
+            const display = document.getElementById('wish-display');
+            const randomIndex = Math.floor(Math.random() * wishes.length);
+            
+            display.style.opacity = 0;
+            
+            setTimeout(() => {
+                display.innerText = wishes[randomIndex];
+                display.style.transition = "opacity 0.5s ease";
+                display.style.opacity = 1;
+            }, 200);
+        }
+    </script>
+</body>
+</html>
